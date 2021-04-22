@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="#EDEDED"
+            app:contentInsetLeft="205dp"
+            app:contentInsetStart="205dp"
+            app:contentInsetEnd="195dp"
+            app:contentInsetRight="195dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+
+        <!--                //深色调-->
+        <!--                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"-->
+        <!--                app:popupTheme="@style/Theme.AppCompat.Light"-->
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <FrameLayout
+
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/search_input"
+                android:iconifiedByDefault="false"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="10dp"
+                android:drawableLeft="@mipmap/ic_find"
+                android:drawablePadding="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/translucent4"
+                android:textSize="16sp"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:queryHint="请输入关键字"/>
+
+<!--            <ImageView-->
+<!--                android:id="@+id/search_delete"-->
+<!--                android:visibility="gone"-->
+<!--                android:layout_marginRight="20dp"-->
+<!--                android:src="@mipmap/ic_cancel"-->
+<!--                android:layout_gravity="right|center_vertical"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"/>-->
+        </FrameLayout>
+
+<!--        <Button-->
+<!--            android:id="@+id/search_cancel"-->
+<!--            android:layout_marginRight="10dp"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:layout_gravity="center_vertical"-->
+<!--            android:background="@drawable/translucent"-->
+<!--            android:layout_width="35dp"-->
+<!--            android:layout_height="35dp"-->
+<!--            android:text="取消"-->
+<!--            android:textColor="@color/white"/>-->
+    </LinearLayout>
+
+<!--    <androidx.cardview.widget.CardView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content">-->
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/search_list"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+
+<!--    </androidx.cardview.widget.CardView>-->
+
+<!--    <androidx.appcompat.widget.SearchView-->
+<!--        android:id="@+id/main_search_layout"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="@drawable/translucent4">-->
+<!--    </androidx.appcompat.widget.SearchView>-->
+
+<!--    <ListView-->
+<!--        android:visibility="gone"-->
+<!--        android:id="@+id/main_search_results"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content">-->
+
+<!--    </ListView>-->
+</LinearLayout>

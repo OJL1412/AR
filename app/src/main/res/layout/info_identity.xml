@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#EDEDED"
+    tools:context=".Mine.IdentityActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/info_identity_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="#EDEDED"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="实名认证"
+                android:textSize="20sp"
+                android:textColor="@color/black"/>
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/df_realName"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                android:padding="13dp"
+                android:layout_gravity="center"
+                android:background="@color/white"
+                android:drawablePadding="5dp"
+                android:text="真实姓名"
+                android:clickable="true"
+                android:focusable="true"
+                android:drawableLeft="@mipmap/ic_name"
+                app:drawableRightCompat="@mipmap/ic_arrow" />
+
+            <TextView
+                android:id="@+id/df_tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:gravity="center"
+                android:layout_marginRight="30sp"
+                android:textSize="15sp"/>
+
+        </FrameLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:background="@color/black"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/df_license"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                android:padding="13dp"
+                android:layout_gravity="center"
+                android:background="@color/white"
+                android:drawablePadding="5dp"
+                android:text="身份证号"
+                android:clickable="true"
+                android:focusable="true"
+                android:drawableLeft="@mipmap/ic_license"
+                app:drawableRightCompat="@mipmap/ic_arrow" />
+
+            <TextView
+                android:id="@+id/df_tv_license"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:gravity="center"
+                android:layout_marginRight="30sp"
+                android:textSize="15sp"/>
+
+        </FrameLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:background="@color/black"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/df_phone"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                android:padding="13dp"
+                android:layout_gravity="center"
+                android:background="@color/white"
+                android:drawablePadding="5dp"
+                android:text="手机号"
+                android:clickable="true"
+                android:focusable="true"
+                android:drawableLeft="@mipmap/ic_call"
+                app:drawableRightCompat="@mipmap/ic_arrow" />
+
+            <TextView
+                android:id="@+id/df_tv_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:gravity="center"
+                android:layout_marginRight="30sp"
+                android:textSize="15sp"/>
+
+        </FrameLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/df_team"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                android:padding="13dp"
+                android:background="@color/white"
+                android:drawablePadding="5dp"
+                android:text="是否办理过团队认证"
+                android:clickable="true"
+                android:focusable="true"
+                android:drawableLeft="@mipmap/ic_team"/>
+
+            <CheckBox
+                android:id="@+id/df_cb_team"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:gravity="center"
+                android:layout_marginRight="5sp"
+                android:background="@null"
+                android:textSize="15sp"/>
+        </FrameLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/df_photo"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                android:padding="13dp"
+                android:background="@color/white"
+                android:drawablePadding="5dp"
+                android:text="相片"
+                android:clickable="true"
+                android:focusable="true"
+                android:drawableLeft="@mipmap/ic_photo"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:gravity="center"
+                android:layout_marginRight="30sp"
+                android:textSize="15sp"/>
+        </FrameLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/df_level"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                android:padding="13dp"
+                android:background="@color/white"
+                android:drawablePadding="5dp"
+                android:text="实名等级"
+                android:clickable="true"
+                android:focusable="true"
+                android:drawableLeft="@mipmap/ic_confirm"/>
+
+            <TextView
+                android:id="@+id/df_tv_level"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:gravity="center"
+                android:layout_marginRight="30sp"
+                android:textSize="15sp"/>
+        </FrameLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"/>
+
+        <TextView
+            android:id="@+id/df_verify"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:padding="10dp"
+            android:gravity="center"
+            android:background="@color/white"
+            android:text="尚未实名认证"
+            android:clickable="true"
+            android:focusable="true" />
+
+    </LinearLayout>
+
+</LinearLayout>

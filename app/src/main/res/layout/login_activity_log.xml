@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".login.LogActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:orientation="vertical">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ic_logo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="80dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@mipmap/ic_ar" />
+    </LinearLayout>
+
+
+        <EditText
+            android:id="@+id/log_u_p_e"
+            android:background="@drawable/translucent5"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:padding="10dp"
+            android:hint="手机号或邮箱"
+            android:textSize="20sp"
+            android:textColor="#000000"/>
+
+        <EditText
+            android:id="@+id/log_password"
+            android:background="@drawable/translucent5"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:hint="密码"
+            android:textSize="20sp"
+            android:textColor="#000000"
+            android:inputType="textPassword"/>
+
+        <Button
+             android:id="@+id/bt_log"
+             android:layout_width="150sp"
+             android:layout_height="wrap_content"
+             android:layout_gravity="center"
+             android:layout_marginTop="20dp"
+             android:padding="5dp"
+             android:background="@drawable/translucent4"
+             android:textSize="24sp"
+             android:text="登录"/>
+
+    <RelativeLayout
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_reg"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="80dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="新用户注册"
+            android:textSize="18sp"
+            android:textColor="@color/black"/>
+
+        <!--layout_weight="1" layout_width="0dp"实现均分效果-->
+
+        <TextView
+            android:id="@+id/tv_find_psw"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="80dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="忘记密码"
+            android:textSize="18sp"
+            android:textColor="@color/black"/>
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_gravity="center"
+            android:layout_marginBottom="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <CheckBox
+                android:id="@+id/yes"
+                android:layout_alignParentBottom="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="勾选即代表已阅读并同意服务条款"
+                android:textColor="@color/black"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

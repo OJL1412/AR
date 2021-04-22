@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.mdtest">
+    <!-- 权限声明 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- 允许联网 -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- 获取GSM（2g）、WCDMA（联通3g）等网络状态的信息 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 获取wifi网络状态的信息 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- 保持CPU 运转，屏幕和键盘灯有可能是关闭的,用于文件上传和下载 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- 获取sd卡写的权限，用于文件上传和下载 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- 允许读取手机状态 用于创建BmobInstallation -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_ar"
+        android:label=""
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MDtest">
+        <activity android:name=".Mine.GoActivity"/>
+        <activity android:name=".Mine.IdentityActivity" />
+        <activity android:name=".CardInit.TakeListActivity" />
+        <activity android:name=".CardInit.OrderListActivity"
+            android:theme="@style/OrderActivityTheme" />
+        <activity android:name=".Mine.MyAddrActivity" />
+        <activity android:name=".Mine.PhoneActivity" />
+        <activity android:name=".Mine.PSWActivity" />
+        <activity android:name=".Mine.ChangeActivity" />
+        <activity android:name=".Mine.HelpActivity" />
+        <activity android:name=".Mine.AboutActivity" />
+        <activity android:name=".Mine.AccountActivity" />
+        <activity
+            android:name=".CardInit.DeliveryActivity"
+            android:theme="@style/DeliveryActivityTheme" />
+        <activity android:name=".CardInit.LbscActivity" />
+        <activity android:name=".login.PswFindActivity" />
+        <activity android:name=".login.RegActivity" />
+        <activity
+            android:name=".login.LogActivity"
+            android:label="AR跑腿">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Setting.ScanActivity" />
+        <activity android:name=".DrawMenu.CreditActivity" />
+        <activity android:name=".DrawMenu.TakeActivity" />
+        <activity android:name=".DrawMenu.OrderActivity" />
+        <activity android:name=".DrawMenu.InfoActivity" />
+
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="fV8U8zQ1v5RDzcZDLKYfHI4vBeXPhm4k" />
+
+        <activity android:name=".MainActivity">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
+
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" />
+
+        <provider
+            android:name="cn.bmob.v3.util.BmobContentProvider"
+            android:authorities="com.example.mdtest.BmobContentProvider" />
+    </application>
+
+</manifest>

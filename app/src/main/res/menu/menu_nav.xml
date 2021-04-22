@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_info"
+            android:title="个人信息"/>
+
+<!--        <item-->
+<!--            android:id="@+id/nav_delivery"-->
+<!--            android:title="我的快递"/>-->
+
+        <item
+            android:id="@+id/nav_orders"
+            android:title="我的悬赏"/>
+
+        <item
+            android:id="@+id/nav_take"
+            android:title="我的接单"/>
+
+        <item
+            android:id="@+id/nav_credit"
+            android:title="信誉等级"/>
+
+<!--        <item-->
+<!--            android:id="@+id/nav_setting"-->
+<!--            android:title="设置中心"/>-->
+
+    </group>
+
+</menu>

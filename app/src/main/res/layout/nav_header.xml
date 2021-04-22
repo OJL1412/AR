@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/nav_head"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:padding="10dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:onClick="head"
+    android:background="#1C92F2">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/nav_icon_image"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20sp"
+        android:src="@mipmap/ic_dog" />
+
+    <LinearLayout
+        android:id="@+id/user_info"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginLeft="110sp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/nav_head_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/mail"
+            android:text="OJL"
+            android:textColor="#FFF"
+            android:textSize="14sp"/>
+
+        <TextView
+            android:id="@+id/nav_head_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1791088334@qq.com"
+            android:textColor="#FFF"
+            android:textSize="14sp"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

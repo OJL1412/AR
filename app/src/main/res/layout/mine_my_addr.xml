@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Mine.MyAddrActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/info_psw_find_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="#EDEDED"
+            app:menu="@menu/menu_address"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="常用地址"
+                android:textSize="20sp"
+                android:textColor="@color/black" />
+        </androidx.appcompat.widget.Toolbar>
+
+
+        <!--                //深色调-->
+        <!--                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"-->
+        <!--                app:popupTheme="@style/Theme.AppCompat.Light"-->
+
+    </com.google.android.material.appbar.AppBarLayout>
+</LinearLayout>
