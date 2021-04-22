@@ -1,0 +1,7 @@
+https://github.com/OJL1412/AR
+
+git add .
+git commit -m "注释"
+git pull origin 分支名（没有就是主线main）
+
+git merge origin/branchxx 合并主分支
