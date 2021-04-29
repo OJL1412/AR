@@ -48,6 +48,12 @@
             android:textColor="#000000"
             android:inputType="textPassword"/>
 
+<!--        <CheckBox-->
+<!--            android:id="@+id/remember_pass"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="50sp"/>-->
+
         <Button
              android:id="@+id/bt_log"
              android:layout_width="150sp"
