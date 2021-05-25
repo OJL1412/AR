@@ -16,7 +16,7 @@
             android:id="@+id/take_toolbar"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:background="#EDEDED"
+            android:background="@color/orange"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
             <TextView
@@ -25,7 +25,7 @@
                 android:layout_gravity="center"
                 android:text="我的接单"
                 android:textSize="20sp"
-                android:textColor="@color/black"/>
+                android:textColor="@color/white"/>
         </androidx.appcompat.widget.Toolbar>
 
 
@@ -60,7 +60,8 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/take_recycle_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:background="#FF856A"/>
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 </FrameLayout>

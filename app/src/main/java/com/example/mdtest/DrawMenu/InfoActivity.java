@@ -15,9 +15,9 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import com.example.mdtest.Mine.MyAddrActivity;
-import com.example.mdtest.R;
 import com.example.mdtest.Bean.MyUser;
+import com.example.mdtest.R;
+import com.example.mdtest.Setting.AddressActivity;
 
 import cn.bmob.v3.Bmob;
 import cn.bmob.v3.exception.BmobException;
@@ -477,7 +477,7 @@ public class InfoActivity extends AppCompatActivity {
         info_address.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(InfoActivity.this, MyAddrActivity.class);
+                Intent intent = new Intent(InfoActivity.this, AddressActivity.class);
                 startActivity(intent);
             }
         });

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Setting.TotalTakeActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/total_take_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="@color/orange"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="悬赏大全"
+                android:textSize="20sp"
+                android:textColor="@color/white"/>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!--导航栏-->
+        <RelativeLayout
+            android:id="@+id/total_take_guide"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F7F7F7"
+            android:orientation="horizontal"
+            android:layout_alignParentTop="true">
+
+            <RadioGroup
+                android:id="@+id/rdg_total_take"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rbt_take_total"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:button="@null"
+                    android:clickable="true"
+                    android:drawablePadding="2dp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:onClick="switchView"
+                    android:background="@color/white"
+                    android:text="全部"
+                    android:textColor="@drawable/x_nav_menu_color"
+                    android:textSize="15sp" />
+
+                <RadioButton
+                    android:id="@+id/rbt_take_pick"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:background="@color/white"
+                    android:clickable="true"
+                    android:drawablePadding="2dp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:onClick="switchView"
+                    android:text="快取"
+                    android:textColor="@drawable/x_nav_menu_color"
+                    android:textSize="15sp" />
+
+                <RadioButton
+                    android:id="@+id/rbt_take_buy"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:background="@color/white"
+                    android:clickable="true"
+                    android:drawablePadding="2dp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:onClick="switchView"
+                    android:text="快买"
+                    android:textColor="@drawable/x_nav_menu_color"
+                    android:textSize="15sp" />
+
+                <RadioButton
+                    android:id="@+id/rbt_take_send"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:background="@color/white"
+                    android:clickable="true"
+                    android:drawablePadding="2dp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:onClick="switchView"
+                    android:text="快送"
+                    android:textColor="@drawable/x_nav_menu_color"
+                    android:textSize="15sp" />
+
+                <RadioButton
+                    android:id="@+id/rbt_take_own"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:background="@color/white"
+                    android:clickable="true"
+                    android:drawablePadding="2dp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:onClick="switchView"
+                    android:text="自定义"
+                    android:textColor="@drawable/x_nav_menu_color"
+                    android:textSize="15sp" />
+
+                <RadioButton
+                    android:id="@+id/rbt_take_noName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:background="@color/white"
+                    android:clickable="true"
+                    android:drawablePadding="2dp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:onClick="switchView"
+                    android:text="未命名"
+                    android:textColor="@drawable/x_nav_menu_color"
+                    android:textSize="15sp" />
+            </RadioGroup>
+        </RelativeLayout>
+
+        <!--分割线-->
+        <View
+            android:id="@+id/diver_line"
+            android:layout_below="@+id/total_take_guide"
+            android:layout_width="match_parent"
+            android:layout_height="0.2dp"
+            android:background="#C2C5CE"/>
+
+        <FrameLayout
+            android:id="@+id/fragment_takeList_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/diver_line"
+            android:background="#FFA085"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        </FrameLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

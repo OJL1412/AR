@@ -1,5 +1,6 @@
 package com.example.mdtest.CardInit;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,7 +10,6 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,19 +18,16 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import com.bumptech.glide.Glide;
 import com.example.mdtest.Bean.MyOrder;
 import com.example.mdtest.Bean.MyUser;
 import com.example.mdtest.DrawMenu.TakeActivity;
 import com.example.mdtest.R;
-import com.google.android.material.appbar.CollapsingToolbarLayout;
 
 import cn.bmob.v3.Bmob;
 import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.QueryListener;
 import cn.bmob.v3.listener.UpdateListener;
-import de.hdodenhof.circleimageview.CircleImageView;
 
 public class DeliveryActivity extends AppCompatActivity {
 
@@ -40,10 +37,13 @@ public class DeliveryActivity extends AppCompatActivity {
     private String dvId;
     private String dvTag;
 
-    private CircleImageView deli_icon;
+    //private CircleImageView deli_icon;
     private TextView deli_status;
     private TextView deli_tag;
     private TextView deli_offer;
+    private TextView deli_standard;
+    private TextView deli_message;
+    private TextView deli_end_time;
     private TextView deli_time;
     private TextView deli_company;
     private TextView deli_address;
@@ -55,6 +55,7 @@ public class DeliveryActivity extends AppCompatActivity {
     private TextView deli_describe;
     private Button bt_deli;
 
+    @SuppressLint("ResourceAsColor")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,8 +69,10 @@ public class DeliveryActivity extends AppCompatActivity {
 //        int dvImageId = intent.getIntExtra(DV_IMAGE_ID, 0);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.delivery_toolBar);
-        CollapsingToolbarLayout collapsingToolbar = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
-        ImageView deliveryImageView = (ImageView) findViewById(R.id.delivery_image_view);
+        toolbar.setTitle("悬赏"+dvId);
+        toolbar.setTitleTextColor(R.color.white);
+//        CollapsingToolbarLayout collapsingToolbar = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
+//        ImageView deliveryImageView = (ImageView) findViewById(R.id.delivery_image_view);
 
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
@@ -80,10 +83,13 @@ public class DeliveryActivity extends AppCompatActivity {
         }
 
 
-        deli_icon = (CircleImageView)findViewById(R.id.deli_icon);
+//        deli_icon = (CircleImageView)findViewById(R.id.deli_icon);
         deli_status = (TextView)findViewById(R.id.deli_status);
         deli_tag = (TextView)findViewById(R.id.deli_tag);
         deli_offer = (TextView)findViewById(R.id.deli_offer);
+        deli_standard = (TextView)findViewById(R.id.deli_standard);
+        deli_message = (TextView)findViewById(R.id.deli_message);
+        deli_end_time = (TextView)findViewById(R.id.deli_end_time);
         deli_time = (TextView)findViewById(R.id.deli_time);
         deli_company = (TextView)findViewById(R.id.deli_company);
         deli_address = (TextView)findViewById(R.id.deli_address);
@@ -96,24 +102,25 @@ public class DeliveryActivity extends AppCompatActivity {
         bt_deli = (Button) findViewById(R.id.bt_deli_yes);
 
 
-        collapsingToolbar.setTitle("订单"+dvId);
-        switch (dvTag) {
-            case "水果":
-                Glide.with(this).load(R.mipmap.ic_fruit).into(deliveryImageView);
-                break;
-            case "电子器件":
-                Glide.with(this).load(R.mipmap.ic_electric).into(deliveryImageView);
-                break;
-            case "书本":
-                Glide.with(this).load(R.mipmap.ic_book).into(deliveryImageView);
-                break;
-            case "衣服":
-                Glide.with(this).load(R.mipmap.ic_clothes).into(deliveryImageView);
-                break;
-            default:
-                Glide.with(this).load(R.mipmap.ic_box).into(deliveryImageView);
-                break;
-        }
+//        collapsingToolbar.setTitle("订单"+dvId);
+//        Glide.with(this).load(R.mipmap.ic_image).into(deliveryImageView);
+//        switch (dvTag) {
+//            case "水果":
+//                Glide.with(this).load(R.mipmap.ic_fruit).into(deliveryImageView);
+//                break;
+//            case "电子器件":
+//                Glide.with(this).load(R.mipmap.ic_electric).into(deliveryImageView);
+//                break;
+//            case "书本":
+//                Glide.with(this).load(R.mipmap.ic_book).into(deliveryImageView);
+//                break;
+//            case "衣服":
+//                Glide.with(this).load(R.mipmap.ic_clothes).into(deliveryImageView);
+//                break;
+//            default:
+//                Glide.with(this).load(R.mipmap.ic_box).into(deliveryImageView);
+//                break;
+//        }
 
         initDelivery();     //初始化悬赏内容
 
@@ -133,25 +140,27 @@ public class DeliveryActivity extends AppCompatActivity {
             @Override
             public void done(MyOrder order,BmobException e) {
                 if(e==null){
-                    switch (dvTag) {
-                        case "水果":
-                            deli_icon.setImageResource(R.mipmap.ic_fruit);
-                            break;
-                        case "电子器件":
-                            deli_icon.setImageResource(R.mipmap.ic_electric);
-                            break;
-                        case "书本":
-                            deli_icon.setImageResource(R.mipmap.ic_book);
-                            break;
-                        case "衣服":
-                            deli_icon.setImageResource(R.mipmap.ic_clothes);
-                            break;
-                        default:
-                            deli_icon.setImageResource(R.mipmap.ic_box);
-                            break;
-                    }
+//                    switch (dvTag) {
+//                        case "水果":
+//                            deli_icon.setImageResource(R.mipmap.ic_fruit);
+//                            break;
+//                        case "电子器件":
+//                            deli_icon.setImageResource(R.mipmap.ic_electric);
+//                            break;
+//                        case "书本":
+//                            deli_icon.setImageResource(R.mipmap.ic_book);
+//                            break;
+//                        case "衣服":
+//                            deli_icon.setImageResource(R.mipmap.ic_clothes);
+//                            break;
+//                        default:
+//                            deli_icon.setImageResource(R.mipmap.ic_box);
+//                            break;
+//                    }
                     deli_tag.setText(String.valueOf(order.getTag()));
-                    deli_offer.setText("¥ "+String.valueOf(order.getOffer()));
+                    deli_standard.setText(order.getStandard());
+                    deli_message.setText(order.getMessage());
+                    deli_offer.setText(String.valueOf(order.getOffer()));
                     deli_time.setText(String.valueOf(order.getCome_time()));
                     deli_company.setText(String.valueOf(order.getCompany()));
                     deli_address.setText(String.valueOf(order.getAddress()));
@@ -161,6 +170,7 @@ public class DeliveryActivity extends AppCompatActivity {
                     deli_objectId.setText(String.valueOf(order.getObjectId()));
                     deli_time2.setText(String.valueOf(order.getCreatedAt()));
                     deli_describe.setText(String.valueOf(order.getDescribe()));
+                    deli_end_time.setText(order.getEnd_time());
 
                     switch (order.getStatus())
                     {

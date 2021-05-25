@@ -15,7 +15,7 @@
             android:id="@+id/order_toolbar"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:background="#EB4350"
+            android:background="@color/orange"
             app:title="">
 
             <TextView
@@ -32,58 +32,58 @@
     </com.google.android.material.appbar.AppBarLayout>
 
 
-    <FrameLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+<!--    <FrameLayout-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_behavior="@string/appbar_scrolling_view_behavior">-->
 
-        <androidx.viewpager.widget.ViewPager
-            android:id="@+id/mainViewPager"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
+<!--        <androidx.viewpager.widget.ViewPager-->
+<!--            android:id="@+id/mainViewPager"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="0dp"-->
+<!--            android:layout_weight="1" />-->
 
-        <LinearLayout
-            android:id="@+id/linear_layout"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="1dp"
-            android:background="#EDEDED"
-            android:baselineAligned="false"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:paddingBottom="5dp"
-            android:paddingTop="5dp">
+<!--        <LinearLayout-->
+<!--            android:id="@+id/linear_layout"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:layout_marginTop="1dp"-->
+<!--            android:background="#EDEDED"-->
+<!--            android:baselineAligned="false"-->
+<!--            android:gravity="center_vertical"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:paddingBottom="5dp"-->
+<!--            android:paddingTop="5dp">-->
 
-            <TextView
-                android:id="@+id/item_order1"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="已发布"
-                android:textColor="@color/black"
-                android:textSize="15dp"/>
+<!--            <TextView-->
+<!--                android:id="@+id/item_order1"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="1"-->
+<!--                android:gravity="center_horizontal|center_vertical"-->
+<!--                android:text="已发布"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="15dp"/>-->
 
-            <TextView
-                android:id="@+id/item_order0"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="去悬赏"
-                android:textColor="@color/black"
-                android:textSize="15dp"/>
+<!--            <TextView-->
+<!--                android:id="@+id/item_order0"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="1"-->
+<!--                android:gravity="center_horizontal|center_vertical"-->
+<!--                android:text="去悬赏"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="15dp"/>-->
 
-        </LinearLayout>
+<!--        </LinearLayout>-->
 
-    </FrameLayout>
+<!--    </FrameLayout>-->
 
     <FrameLayout
         android:id="@+id/order_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#EDEDED">
+        android:background="#FF7761">
 
     </FrameLayout>
 

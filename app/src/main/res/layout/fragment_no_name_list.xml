@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+<!--    <com.google.android.material.appbar.AppBarLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content">-->
+
+<!--        <androidx.appcompat.widget.Toolbar-->
+<!--            android:id="@+id/toolbar"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="55dp"-->
+<!--            android:background="@color/grey"-->
+<!--            app:contentInsetLeft="205dp"-->
+<!--            app:contentInsetStart="205dp"-->
+<!--            app:contentInsetEnd="195dp"-->
+<!--            app:contentInsetRight="195dp"-->
+<!--            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>-->
+
+
+<!--        &lt;!&ndash;                //深色调&ndash;&gt;-->
+<!--        &lt;!&ndash;                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"&ndash;&gt;-->
+<!--        &lt;!&ndash;                app:popupTheme="@style/Theme.AppCompat.Light"&ndash;&gt;-->
+
+<!--    </com.google.android.material.appbar.AppBarLayout>-->
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_noName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="96dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginRight="2dp"
+        android:src="@mipmap/ic_top"
+        android:backgroundTint="@android:color/white"
+        android:tint="@color/black"
+        app:elevation="8dp"
+        app:maxImageSize="35dp"/>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh_noName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycle_view_noName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</FrameLayout>
+
+<!--    app:layout_behavior="@string/appbar_scrolling_view_behavior"-->

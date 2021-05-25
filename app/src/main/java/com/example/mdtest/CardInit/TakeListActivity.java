@@ -12,7 +12,6 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import com.bumptech.glide.Glide;
 import com.example.mdtest.Bean.MyOrder;
 import com.example.mdtest.R;
 
@@ -21,7 +20,6 @@ import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.QueryListener;
 import cn.bmob.v3.listener.UpdateListener;
-import de.hdodenhof.circleimageview.CircleImageView;
 
 public class TakeListActivity extends AppCompatActivity {
 
@@ -31,10 +29,13 @@ public class TakeListActivity extends AppCompatActivity {
     private String takeId;
     private String takeTag;
 
-    private CircleImageView take_image;
+    //private CircleImageView take_image;
     private TextView take_tag;
     private TextView take_offer;
     private TextView take_time;
+    private TextView take_end_time;
+    private TextView take_standard;
+    private TextView take_message;
     private TextView take_company;
     private TextView take_address;
     private TextView take_phone_tail;
@@ -57,7 +58,7 @@ public class TakeListActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         takeId = intent.getStringExtra(TAKE_ID);
-        takeTag = intent.getStringExtra(TAKE_IMAGE_ID);
+        //takeTag = intent.getStringExtra(TAKE_IMAGE_ID);
 
         Toolbar toolbar = (Toolbar)findViewById(R.id.take_list_toolbar);
         setSupportActionBar(toolbar);
@@ -73,11 +74,14 @@ public class TakeListActivity extends AppCompatActivity {
 //        collapsingToolbar.setTitle("接单详情");
 //        Glide.with(this).load(takeImageId).into(orderImageView);
 
-        take_image = (CircleImageView)findViewById(R.id.take_list_icon);
+        //take_image = (CircleImageView)findViewById(R.id.take_list_icon);
         take_tag = (TextView)findViewById(R.id.take_list_tag);
         take_offer = (TextView)findViewById(R.id.take_list_offer);
         take_offer1 = (TextView)findViewById(R.id.take_list_offer1);
         take_time = (TextView)findViewById(R.id.take_list_time);
+        take_end_time = (TextView)findViewById(R.id.take_list_end_time);
+        take_standard = (TextView)findViewById(R.id.take_list_standard);
+        take_message = (TextView)findViewById(R.id.take_list_message);
         take_company = (TextView)findViewById(R.id.take_list_company);
         take_address = (TextView)findViewById(R.id.take_list_address);
         take_phone_tail = (TextView)findViewById(R.id.take_list_phoneTail);
@@ -86,27 +90,28 @@ public class TakeListActivity extends AppCompatActivity {
         take_objectId = (TextView)findViewById(R.id.take_list_objectId);
         take_time2 = (TextView)findViewById(R.id.take_list_time2);
         take_describe = (TextView)findViewById(R.id.take_list_describe);
+
         bt_take_cancel = (Button)findViewById(R.id.take_list_cancel);
         bt_take_finish = (Button)findViewById(R.id.take_list_finish);
 
 
-        switch (takeTag) {
-            case "水果":
-                Glide.with(this).load(R.mipmap.ic_fruit).into(take_image);
-                break;
-            case "电子器件":
-                Glide.with(this).load(R.mipmap.ic_electric).into(take_image);
-                break;
-            case "书本":
-                Glide.with(this).load(R.mipmap.ic_book).into(take_image);
-                break;
-            case "衣服":
-                Glide.with(this).load(R.mipmap.ic_clothes).into(take_image);
-                break;
-            default:
-                Glide.with(this).load(R.mipmap.ic_box).into(take_image);
-                break;
-        }
+//        switch (takeTag) {
+//            case "水果":
+//                Glide.with(this).load(R.mipmap.ic_fruit).into(take_image);
+//                break;
+//            case "电子器件":
+//                Glide.with(this).load(R.mipmap.ic_electric).into(take_image);
+//                break;
+//            case "书本":
+//                Glide.with(this).load(R.mipmap.ic_book).into(take_image);
+//                break;
+//            case "衣服":
+//                Glide.with(this).load(R.mipmap.ic_clothes).into(take_image);
+//                break;
+//            default:
+//                Glide.with(this).load(R.mipmap.ic_box).into(take_image);
+//                break;
+//        }
 
 
         initTakeList();
@@ -128,23 +133,23 @@ public class TakeListActivity extends AppCompatActivity {
             @Override
             public void done(MyOrder myOrder, BmobException e) {
                 if(e==null){
-                    switch (takeTag) {
-                        case "水果":
-                            take_image.setImageResource(R.mipmap.ic_fruit);
-                            break;
-                        case "电子器件":
-                            take_image.setImageResource(R.mipmap.ic_electric);
-                            break;
-                        case "书本":
-                            take_image.setImageResource(R.mipmap.ic_book);
-                            break;
-                        case "衣服":
-                            take_image.setImageResource(R.mipmap.ic_clothes);
-                            break;
-                        default:
-                            take_image.setImageResource(R.mipmap.ic_box);
-                            break;
-                    }
+//                    switch (takeTag) {
+//                        case "水果":
+//                            take_image.setImageResource(R.mipmap.ic_fruit);
+//                            break;
+//                        case "电子器件":
+//                            take_image.setImageResource(R.mipmap.ic_electric);
+//                            break;
+//                        case "书本":
+//                            take_image.setImageResource(R.mipmap.ic_book);
+//                            break;
+//                        case "衣服":
+//                            take_image.setImageResource(R.mipmap.ic_clothes);
+//                            break;
+//                        default:
+//                            take_image.setImageResource(R.mipmap.ic_box);
+//                            break;
+//                    }
                     take_PUC.setText(myOrder.getPickUpCode());
                     take_customer.setText(myOrder.getCustomer());
                     take_phone_tail.setText(myOrder.getPhoneTail());
@@ -153,7 +158,10 @@ public class TakeListActivity extends AppCompatActivity {
                     take_objectId.setText(myOrder.getObjectId());
                     take_time.setText(myOrder.getCreatedAt());
                     take_time2.setText(myOrder.getCome_time());
-                    take_offer.setText(myOrder.getOffer());
+                    take_end_time.setText(myOrder.getEnd_time());
+                    take_standard.setText(myOrder.getStandard());
+                    take_message.setText(myOrder.getMessage());
+                    take_offer.setText(String.valueOf(myOrder.getOffer()));
                     take_offer1.setText("0");
                     take_tag.setText(myOrder.getTag());
                     take_describe.setText(myOrder.getDescribe());

@@ -1,5 +1,6 @@
 package com.example.mdtest.CardInit;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -12,7 +13,6 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,10 +22,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import com.bumptech.glide.Glide;
 import com.example.mdtest.Bean.MyOrder;
 import com.example.mdtest.R;
-import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import cn.bmob.v3.Bmob;
@@ -33,7 +31,6 @@ import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.QueryListener;
 import cn.bmob.v3.listener.UpdateListener;
-import de.hdodenhof.circleimageview.CircleImageView;
 
 public class OrderListActivity extends AppCompatActivity {
 
@@ -42,13 +39,15 @@ public class OrderListActivity extends AppCompatActivity {
 
     private String orderId;
     private String orderTag;
-    private String orderStatus;
+    //private String orderStatus;
 
-    private CircleImageView order_list_icon;
+//    private CircleImageView order_list_icon;
     private TextView order_list_status;
     private TextView order_list_cui;
     private TextView order_list_update;
     private TextView order_tag;
+    private TextView order_standard;
+    private TextView order_message;
     private TextView order_offer;
     private TextView order_time;
     private TextView order_company;
@@ -59,11 +58,13 @@ public class OrderListActivity extends AppCompatActivity {
     private TextView order_objectId;
     private TextView order_time2;
     private TextView order_describe;
+    private TextView order_end_time;
     private Button bt_order_cash;
     private Button bt_order_cancel;
 
     private FloatingActionButton order_fab;
 
+    @SuppressLint("ResourceAsColor")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,8 +77,10 @@ public class OrderListActivity extends AppCompatActivity {
         orderTag = intent.getStringExtra(ORDER_IMAGE_ID);
 
         Toolbar toolbar = findViewById(R.id.order_list_toolbar);
-        CollapsingToolbarLayout collapsingToolbar = findViewById(R.id.collapsing_toolbar2);
-        ImageView orderImageView = findViewById(R.id.order_image_view);
+        toolbar.setTitle("悬赏"+orderId);
+        toolbar.setTitleTextColor(R.color.white);
+//        CollapsingToolbarLayout collapsingToolbar = findViewById(R.id.collapsing_toolbar2);
+//        ImageView orderImageView = findViewById(R.id.order_image_view);
 
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
@@ -88,10 +91,12 @@ public class OrderListActivity extends AppCompatActivity {
         }
 
         order_list_status = findViewById(R.id.deli_running);
-        order_list_icon = findViewById(R.id.order_list_icon);
+//        order_list_icon = findViewById(R.id.order_list_icon);
         order_list_cui = findViewById(R.id.order_list_cui);
         order_list_update = findViewById(R.id.order_list_update);
         order_tag = findViewById(R.id.order_list_tag);
+        order_standard = findViewById(R.id.order_list_standard);
+        order_message = findViewById(R.id.order_list_message);
         order_offer = findViewById(R.id.order_list_offer);
         order_time = findViewById(R.id.order_list_time);
         order_company = findViewById(R.id.order_list_company);
@@ -102,30 +107,32 @@ public class OrderListActivity extends AppCompatActivity {
         order_objectId = findViewById(R.id.order_list_objectId);
         order_time2 = findViewById(R.id.order_list_time2);
         order_describe = findViewById(R.id.order_list_describe);
+        order_end_time = findViewById(R.id.order_list_end_time);
 
 //        order_fab = findViewById(R.id.order_fab);
 
         bt_order_cash = findViewById(R.id.bt_order_cash);
         bt_order_cancel = findViewById(R.id.bt_order_cancel);
 
-        collapsingToolbar.setTitle("悬赏"+orderId);
-        switch (orderTag) {
-            case "水果":
-                Glide.with(this).load(R.mipmap.ic_fruit).into(orderImageView);
-                break;
-            case "电子器件":
-                Glide.with(this).load(R.mipmap.ic_electric).into(orderImageView);
-                break;
-            case "书本":
-                Glide.with(this).load(R.mipmap.ic_book).into(orderImageView);
-                break;
-            case "衣服":
-                Glide.with(this).load(R.mipmap.ic_clothes).into(orderImageView);
-                break;
-            default:
-                Glide.with(this).load(R.mipmap.ic_box).into(orderImageView);
-                break;
-        }
+        //collapsingToolbar.setTitle("悬赏"+orderId);
+        //Glide.with(this).load(R.mipmap.ic_image).into(orderImageView);
+//        switch (orderTag) {
+//            case "水果":
+//                Glide.with(this).load(R.mipmap.ic_fruit).into(orderImageView);
+//                break;
+//            case "电子器件":
+//                Glide.with(this).load(R.mipmap.ic_electric).into(orderImageView);
+//                break;
+//            case "书本":
+//                Glide.with(this).load(R.mipmap.ic_book).into(orderImageView);
+//                break;
+//            case "衣服":
+//                Glide.with(this).load(R.mipmap.ic_clothes).into(orderImageView);
+//                break;
+//            default:
+//                Glide.with(this).load(R.mipmap.ic_box).into(orderImageView);
+//                break;
+//        }
 
 
         initOrderList();
@@ -157,25 +164,28 @@ public class OrderListActivity extends AppCompatActivity {
             public void done(MyOrder myOrder, BmobException e) {
                 if(e==null){
 
-                    switch (orderTag) {
-                        case "水果":
-                            order_list_icon.setImageResource(R.mipmap.ic_fruit);
-                            break;
-                        case "电子器件":
-                            order_list_icon.setImageResource(R.mipmap.ic_electric);
-                            break;
-                        case "书本":
-                            order_list_icon.setImageResource(R.mipmap.ic_book);
-                            break;
-                        case "衣服":
-                            order_list_icon.setImageResource(R.mipmap.ic_clothes);
-                            break;
-                        default:
-                            order_list_icon.setImageResource(R.mipmap.ic_box);
-                            break;
-                    }
+//                    switch (orderTag) {
+//                        case "水果":
+//                            order_list_icon.setImageResource(R.mipmap.ic_fruit);
+//                            break;
+//                        case "电子器件":
+//                            order_list_icon.setImageResource(R.mipmap.ic_electric);
+//                            break;
+//                        case "书本":
+//                            order_list_icon.setImageResource(R.mipmap.ic_book);
+//                            break;
+//                        case "衣服":
+//                            order_list_icon.setImageResource(R.mipmap.ic_clothes);
+//                            break;
+//                        default:
+//                            order_list_icon.setImageResource(R.mipmap.ic_box);
+//                            break;
+//                    }
 
                     order_tag.setText(String.valueOf(myOrder.getTag()));
+                    order_standard.setText(myOrder.getStandard());
+                    order_message.setText(myOrder.getMessage());
+                    order_end_time.setText(myOrder.getEnd_time());
                     order_offer.setText(String.valueOf(myOrder.getOffer()));
                     order_time.setText(String.valueOf(myOrder.getCome_time()));
                     order_company.setText(String.valueOf(myOrder.getCompany()));

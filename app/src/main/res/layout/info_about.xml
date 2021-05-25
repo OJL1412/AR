@@ -32,31 +32,31 @@
         android:layout_height="100dp"
         android:layout_marginTop="100dp"
         android:layout_gravity="center"
-        android:src="@mipmap/ic_ar" />
+        android:src="@mipmap/ic_logo" />
 
     <TextView
         android:id="@+id/AR_about"
         android:layout_width="220sp"
         android:layout_height="200dp"
-        android:text="AR速递"
+        android:text="袋鼠跑腿"
         android:textSize="15sp"
         android:textColor="@color/black"
         android:gravity="top|center"
         android:layout_gravity="center"/>
 
     <TextView
-        android:layout_width="150dp"
+        android:layout_width="155dp"
         android:layout_height="50dp"
         android:layout_gravity="center"
         android:gravity="center"
-        android:text="AR速递许可及服务协议《隐私保护指引》"
+        android:text="袋鼠跑腿许可及服务协议\n《隐私保护指引》"
         android:textColor="@color/purple_200"
         android:layout_marginTop="180dp"/>
 
     <TextView
         android:layout_width="135dp"
         android:layout_height="15sp"
-        android:text="AR项目组 版权所有 翻版必究"
+        android:text="DR项目组 版权所有 翻版必究"
         android:textSize="10dp"
         android:layout_gravity="center"
         android:gravity="center"/>

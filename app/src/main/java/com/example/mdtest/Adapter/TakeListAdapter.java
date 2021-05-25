@@ -46,7 +46,7 @@ public class TakeListAdapter extends RecyclerView.Adapter<TakeListAdapter.ViewHo
 
         holder.company.setText(mTakeList.get(position).getCompany());
         holder.address.setText(mTakeList.get(position).getAddress());
-        holder.offer.setText(mTakeList.get(position).getOffer());
+        holder.offer.setText(String.valueOf(mTakeList.get(position).getOffer()));
         holder.tv_inform.setText("+"+mTakeList.get(position).getRush()+"次");
 
         //得到集合中的状态值
@@ -61,7 +61,7 @@ public class TakeListAdapter extends RecyclerView.Adapter<TakeListAdapter.ViewHo
             case "已支付":
                 holder.status.setText("已支付");
                 holder.tvTakeChoice.setText("删除接单");
-                holder.takeOffer.setText(mTakeList.get(position).getOffer());
+                holder.takeOffer.setText(String.valueOf(mTakeList.get(position).getOffer()));
                 break;
 
             case "已接单":

@@ -17,16 +17,19 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.multidex.MultiDex;
 
-import com.example.mdtest.Fragment.FindFragment;
-import com.example.mdtest.Fragment.MainFragment;
-import com.example.mdtest.Fragment.MyFragment;
-import com.example.mdtest.Mine.HelpActivity;
 import com.example.mdtest.Bean.MyUser;
 import com.example.mdtest.DrawMenu.CreditActivity;
 import com.example.mdtest.DrawMenu.InfoActivity;
 import com.example.mdtest.DrawMenu.OrderActivity;
 import com.example.mdtest.DrawMenu.TakeActivity;
+import com.example.mdtest.PageTwo.FindFragment;
+import com.example.mdtest.PageFirst.MainFragment;
+import com.example.mdtest.PageThree.MyFragment;
+import com.example.mdtest.Mine.FeedbackActivity;
+import com.example.mdtest.DrawMenu.MyTeamActivity;
 import com.example.mdtest.Setting.ScanActivity;
+import com.example.mdtest.Team.TeamActivity;
+import com.example.mdtest.Setting.TotalTakeActivity;
 import com.google.android.material.navigation.NavigationView;
 
 import cn.bmob.v3.Bmob;
@@ -120,6 +123,19 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(intent5);
                         break;
 
+                    case R.id.nav_team:
+                        MyUser myUser = MyUser.getCurrentUser(MyUser.class);
+                        Intent intent6;
+                        if (myUser.getTeam().equals("否"))
+                        {
+                            intent6 = new Intent(MainActivity.this, TeamActivity.class);
+                        }else {
+                            intent6 = new Intent(MainActivity.this, MyTeamActivity.class);
+                        }
+                        startActivity(intent6);
+                        break;
+
+
                     default:
                         break;
                 }
@@ -168,8 +184,14 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.helps:
 //                Toast.makeText(this, "你选择了帮助与反馈", Toast.LENGTH_SHORT).show();
-                Intent intent2 = new Intent(MainActivity.this, HelpActivity.class);
+                Intent intent2 = new Intent(MainActivity.this, FeedbackActivity.class);
                 startActivity(intent2);
+                break;
+
+            case R.id.takeList:
+//                Toast.makeText(this, "你选择了悬赏大全", Toast.LENGTH_SHORT).show();
+                Intent intent3 = new Intent(MainActivity.this, TotalTakeActivity.class);
+                startActivity(intent3);
                 break;
 
             case android.R.id.home:

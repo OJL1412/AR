@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@mipmap/ic_splash"
+    tools:context=".Team.TeamActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#00000000">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/team_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="#00000000"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="团队"
+                android:textSize="20sp"
+                android:textColor="@color/black"/>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+<!--    <ImageView-->
+<!--        android:id="@+id/delivery_image_view"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="350dp"-->
+<!--        android:scaleType="centerCrop"/>-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+
+        <LinearLayout
+            android:id="@+id/rdg_team"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:background="@drawable/translucent5">
+
+            <TextView
+                android:id="@+id/tv_add_team"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/translucent4"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                android:text="加入团队"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:button="@null"
+                android:gravity="center"
+                android:drawableTop="@mipmap/ic_add_team2"/>
+
+            <TextView
+                android:id="@+id/tv_create_team"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/translucent4"
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                android:text="创建团队"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:button="@null"
+                android:gravity="center"
+                android:drawableTop="@mipmap/ic_create_team"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

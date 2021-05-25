@@ -11,5 +11,18 @@
     <color name="grey">#EDEDED</color>
     <color name="purple">#6699CC</color>
     <color name="red">#FF0000</color>
+    <color name="yellow">#FFFDA0</color>
+    <color name="brown">#19BE94</color>
+    <color name="green">#00B050</color>
+    <color name="shadow_blue">#1C92F2</color>
+    <color name="orange">#F69E54</color>
+    <color name="titleColor">#393939</color>
+    <color name="extraTitleColor">#6f6f6f</color>
+    <color name="noteColor">#a3a3a3</color>
+    <color name="noClick">#c3c3c3</color>
+    <color name="promptColor">#dedede</color>
+    <color name="backgroundColor1">#f5f5f5</color>
+    <color name="backgroundColor2">#eeeeee</color>
+    <color name="backgroundColor3">#efeff4</color>
 </resources>
 

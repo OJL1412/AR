@@ -23,21 +23,42 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_logo"
-        android:label="袋鼠跑腿"
+        android:label=""
         android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MDtest">
-        <activity android:name=".Mine.GoActivity"/>
+        <activity android:name=".PageThree.CustomerServiceActivity"></activity>
+        <activity android:name=".Setting.TotalTakeActivity" />
+        <activity
+            android:name=".Setting.TakeBuyActivity"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".Setting.TakeSendActivity"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".Setting.TakePickActivity"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity android:name=".Team.TeamListActivity" />
+        <activity android:name=".DrawMenu.MyTeamActivity" />
+        <activity android:name=".Team.TeamRegActivity" />
+        <activity android:name=".Setting.AddressActivity" />
+        <activity android:name=".Setting.BusinessActivity" />
+        <activity android:name=".Setting.HistoryActivity" />
+        <activity android:name=".Setting.ListActivity" />
+        <activity android:name=".Team.TeamActivity" />
+        <activity android:name=".Setting.CommandActivity" />
+        <activity android:name=".Setting.SetActivity" />
+        <activity android:name=".Mine.GoActivity" />
         <activity android:name=".Mine.IdentityActivity" />
         <activity android:name=".CardInit.TakeListActivity" />
-        <activity android:name=".CardInit.OrderListActivity"
+        <activity
+            android:name=".CardInit.OrderListActivity"
             android:theme="@style/OrderActivityTheme" />
-        <activity android:name=".Mine.MyAddrActivity" />
         <activity android:name=".Mine.PhoneActivity" />
         <activity android:name=".Mine.PSWActivity" />
         <activity android:name=".Mine.ChangeActivity" />
-        <activity android:name=".Mine.HelpActivity" />
+        <activity android:name=".Mine.FeedbackActivity" />
         <activity android:name=".Mine.AboutActivity" />
         <activity android:name=".Mine.AccountActivity" />
         <activity
@@ -48,9 +69,10 @@
         <activity android:name=".login.RegActivity" />
         <activity
             android:name=".login.LogActivity"
-            android:label="袋鼠跑腿">
+            android:label="袋鼠快取">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -64,7 +86,8 @@
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="fV8U8zQ1v5RDzcZDLKYfHI4vBeXPhm4k" />
 
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
             android:windowSoftInputMode="stateHidden|adjustPan">
 
             <!-- <intent-filter> -->

@@ -8,11 +8,11 @@
 <!--        android:icon="@mipmap/ic_backup"-->
 <!--        app:showAsAction="always"/>-->
 
-<!--    <item-->
-<!--        android:id="@+id/delete"-->
-<!--        android:title="删除"-->
-<!--        android:icon="@mipmap/ic_delete"-->
-<!--        app:showAsAction="ifRoom"/>-->
+    <item
+        android:id="@+id/takeList"
+        android:title="悬赏大全"
+        android:icon="@mipmap/ic_takelist"
+        app:showAsAction="ifRoom"/>
 
     <item
         android:id="@+id/scan"

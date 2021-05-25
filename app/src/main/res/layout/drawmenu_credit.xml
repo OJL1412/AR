@@ -16,7 +16,7 @@
             android:id="@+id/credit_toolbar"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:background="#EDEDED"
+            android:background="@color/orange"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
             <TextView
@@ -24,25 +24,24 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="信誉等级"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="20sp" />
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="10dp" />
-
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#EDEDED"
+        android:background="@color/green"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="5dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
             android:background="@drawable/translucent4"
             android:orientation="horizontal">
 

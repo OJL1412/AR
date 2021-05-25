@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/translucent4"
+        android:orientation="vertical">
+
+        <RadioGroup
+            android:id="@+id/rdg_pick1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/pick_delivery"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="取快递"
+                android:gravity="center"
+                android:textSize="12sp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingRight="20dp"
+                android:paddingLeft="20dp"
+                android:layout_margin="10dp"
+                android:textColor="@drawable/text_color"
+                android:button="@null"
+                android:background="@drawable/tv_type_selected"
+                android:layout_gravity="center"
+                android:clickable="true"
+                android:focusable="true"/>
+
+            <RadioButton
+                android:id="@+id/pick_fruit"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="取水果"
+                android:gravity="center"
+                android:textSize="12sp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingRight="20dp"
+                android:paddingLeft="20dp"
+                android:layout_margin="10dp"
+                android:textColor="@drawable/text_color"
+                android:button="@null"
+                android:background="@drawable/tv_type_selected"
+                android:layout_gravity="center"
+                android:clickable="true"
+                android:focusable="true"/>
+
+            <RadioButton
+                android:id="@+id/pick_box"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="取包裹"
+                android:gravity="center"
+                android:textSize="12sp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingRight="20dp"
+                android:paddingLeft="20dp"
+                android:layout_margin="10dp"
+                android:textColor="@drawable/text_color"
+                android:button="@null"
+                android:background="@drawable/tv_type_selected"
+                android:layout_gravity="center"
+                android:clickable="true"
+                android:focusable="true"/>
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/rdg_pick2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/pick_books"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="取书本"
+                android:gravity="center"
+                android:textSize="12sp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingRight="20dp"
+                android:paddingLeft="20dp"
+                android:layout_margin="10dp"
+                android:textColor="@drawable/text_color"
+                android:button="@null"
+                android:background="@drawable/tv_type_selected"
+                android:layout_gravity="center"
+                android:clickable="true"
+                android:focusable="true"/>
+
+            <RadioButton
+                android:id="@+id/pick_files"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="取文件"
+                android:gravity="center"
+                android:textSize="12sp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingRight="20dp"
+                android:paddingLeft="20dp"
+                android:layout_margin="10dp"
+                android:textColor="@drawable/text_color"
+                android:button="@null"
+                android:background="@drawable/tv_type_selected"
+                android:layout_gravity="center"
+                android:clickable="true"
+                android:focusable="true"/>
+
+            <RadioButton
+                android:id="@+id/pick_own"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="自定义"
+                android:gravity="center"
+                android:textSize="12sp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingRight="20dp"
+                android:paddingLeft="20dp"
+                android:layout_margin="10dp"
+                android:textColor="@drawable/text_color"
+                android:button="@null"
+                android:background="@drawable/tv_type_selected"
+                android:layout_gravity="center"
+                android:clickable="true"
+                android:focusable="true"/>
+        </RadioGroup>
+
+
+        <LinearLayout
+            android:id="@+id/invisible_pick"
+            android:layout_width="150sp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:visibility="invisible"
+            android:background="@drawable/translucent4">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="自定义名字:"
+                android:textSize="12sp"
+                android:layout_gravity="center"
+                android:gravity="center"/>
+
+            <EditText
+                android:id="@+id/pick_self_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:text=""
+                android:textSize="12sp"
+                android:hint="请输入"
+                android:background="@null"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_pick"
+            android:layout_width="200dp"
+            android:layout_height="38dp"
+            android:text="立即下单"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/translucent5"/>
+
+    </LinearLayout>
+</LinearLayout>

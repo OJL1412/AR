@@ -47,9 +47,9 @@ public class OrderListAdapter extends RecyclerView.Adapter<OrderListAdapter.View
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
 
-        holder.company.setText(String.valueOf(mOrderList.get(position).getCompany()));
+        holder.tag.setText(String.valueOf(mOrderList.get(position).getTag()));
         holder.offer.setText(String.valueOf(mOrderList.get(position).getOffer()));
-        holder.pickUpCode.setText(String.valueOf(mOrderList.get(position).getPickUpCode()));
+        holder.address.setText(String.valueOf(mOrderList.get(position).getAddress()));
 
         //得到集合中的状态值
         String i = mOrderList.get(position).getStatus();
@@ -135,9 +135,9 @@ public class OrderListAdapter extends RecyclerView.Adapter<OrderListAdapter.View
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public CardView cardView;
-        public TextView company;
+        public TextView tag;
         public TextView offer;
-        public TextView pickUpCode;
+        public TextView address;
         public TextView status;
         public Button orderCardBt;
 
@@ -145,9 +145,9 @@ public class OrderListAdapter extends RecyclerView.Adapter<OrderListAdapter.View
             super(view);
 
             cardView = (CardView) view;
-            company = (TextView) view.findViewById(R.id.order_card_company);
+            tag = (TextView) view.findViewById(R.id.order_card_tag);
             offer = (TextView) view.findViewById(R.id.order_card_offer);
-            pickUpCode = (TextView) view.findViewById(R.id.order_card_PUC);
+            address = (TextView) view.findViewById(R.id.order_card_address);
             status = (TextView) view.findViewById(R.id.order_card_status);
             orderCardBt = (Button) view.findViewById(R.id.order_card_bt);
         }
